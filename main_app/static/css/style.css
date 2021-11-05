@@ -6,4 +6,19 @@ body {
 
 main {
     flex: 1 0 auto;
+    margin: 0;
+}
+
+nav, footer.page-footer {
+    background-color: black;
+}
+
+body #home-bg {
+    background-image: url('https://i.imgur.com/RL9jHCZ.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh;
+    min-width: 100vh;
+    margin: 0;
 }
