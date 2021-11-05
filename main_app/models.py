@@ -12,10 +12,19 @@ CATEGORIES = (
     ('En', 'Environmental'),
 )
 
+class Category(models.Model):
+    title = models.CharField(
+        max_length=2,
+        choices=CATEGORIES
+    )
+    def __str__(self):
+     return self.title
+
 class Activity(models.Model):
     title = models.CharField(max_length =75)
     description = models.TextField(max_length=200)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    categories = models.ManyToManyField(Category)
 
     def __str__(self):
      return self.title
@@ -29,7 +38,4 @@ class Log(models.Model):
         return f"{self.duration_in_minutes} completed on {self.date_completed}"
 
     class Meta:
-        ordering = ['-date']
-
-class Catagory(models.Model):
-    pass
+        ordering = ['-date_completed']
