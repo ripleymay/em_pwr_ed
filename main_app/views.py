@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from .models import Category
 
 # Create your views here.
 
@@ -9,6 +10,10 @@ def home(request):
 
 def about(request):
   return render(request, 'about.html')
+
+def dashboard(request):
+  categories = Category.objects.all()
+  return render(request, 'categories/index.html', { 'categories': categories })  
 
 def signup(request):
   error_message = ''

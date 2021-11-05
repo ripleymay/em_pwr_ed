@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> Your Dashboard </h1>
+{% for c in categories %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ c.get_title_display }}</span>
+        </div>
+    </div>
+  </a>
+
+{% endfor %}
+
+
+{% endblock %}
