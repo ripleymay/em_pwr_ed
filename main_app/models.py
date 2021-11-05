@@ -39,4 +39,3 @@ class Log(models.Model):
 
     class Meta:
         ordering = ['-date_completed']
-
