@@ -2,3 +2,6 @@
 
 ## Technologies Used
 * Python
+
+
+## Looks like we're about to slay this whole project. #ijs
