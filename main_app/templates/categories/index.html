@@ -2,10 +2,14 @@
 {% block content %}
 
 <h1> Your Dashboard </h1>
+
+<a href="{% url 'activity_create' %}">Add Activity</a>
+<a href="{% url 'activity_list' %}">All Activites</a>
+
 {% for c in categories %}
     <div class="card">
         <div class="card-content">
-            <span class="card-title">{{ c.get_title_display }}</span>
+            <span class="card-title">{{ c.title }}</span>
         </div>
     </div>
   </a>
