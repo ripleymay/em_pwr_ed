@@ -1,24 +1,14 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 # Create your models here.
 
-CATEGORIES = (
-    ('E', 'Emotional'),
-    ('P', 'Physical'),
-    ('SP', 'Spiritual'),
-    ('SO', 'Social'),
-    ('M', 'Mental'),
-    ('En', 'Environmental'),
-)
-
 class Category(models.Model):
-    title = models.CharField(
-        max_length=2,
-        choices=CATEGORIES
-    )
+    title = models.CharField(max_length=20)
+
     def __str__(self):
-     return self.title
+        return self.title
 
 class Activity(models.Model):
     title = models.CharField(max_length =75)
@@ -27,7 +17,10 @@ class Activity(models.Model):
     categories = models.ManyToManyField(Category)
 
     def __str__(self):
-     return self.title
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('activity_detail', kwargs={'pk': self.id})
 
 class Log(models.Model):
     date_completed = models.DateField('Date Completed')
