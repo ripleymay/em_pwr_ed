@@ -3,11 +3,15 @@
 
 <h1> Your Dashboard </h1>
 
+<section id="daily-quote">
+    {{ html|safe }}
+</section>
+
 <a href="{% url 'activity_create' %}">Add Activity</a>
 <a href="{% url 'activity_list' %}">All Activites</a>
 <br><br><br>
 {% for c in categories %}
-<a class="btn-floating pulse {{ c.title }}" href="{% url 'activity_list' %}?category={{c.title}}">
+<a class="btn-floating btn-large pulse category {{ c.title }}" href="{% url 'activity_list' %}?category={{c.title}}">
     <div class="container">
         {{ c.title }}
     </div>
