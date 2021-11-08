@@ -37,8 +37,12 @@ class ActivityDelete(DeleteView):
   success_url = '/dashboard/'
 
 def activity_list(request):
-  activities = Activity.objects.all()
-  return render(request, 'activities/index.html', { 'activities': activities })
+  category = request.GET.get('category')
+  if category:
+    activities = Activity.objects.filter(user=request.user, categories__title=category)
+  else:
+    activities = Activity.objects.filter(user=request.user)
+  return render(request, 'activities/index.html', { 'activities': activities, 'category': category })
 
 def activity_detail(request, activity_id):
   activity = Activity.objects.get(id=activity_id)
