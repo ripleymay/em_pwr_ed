@@ -22,3 +22,36 @@ body #home-bg {
     min-width: 100vh;
     margin: 0;
 }
+
+#daily-quote {
+    font-size: 32px;
+}
+
+.btn-floating.category {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 175px;
+    min-width: 175px;
+    margin: 35px;
+}
+
+.btn-floating.category > div {
+    margin: 0;
+}
+
+.btn-floating.category.Mental {
+    margin-bottom: 100px;
+}
+
+.btn-floating.category.Physical {
+    margin-top: 100px;
+}
+
+.btn-floating.category.Environmental, .btn-floating.category.Social {
+    margin-bottom: 0;
+}
+
+.btn-floating.category.Spiritual, .btn-floating.category.Emotional {
+    margin-top: 0;
+}

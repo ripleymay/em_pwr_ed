@@ -4,6 +4,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Category, Activity, Log
 from .forms import LogForm
+import requests
+import os
 
 # Create your views here.
 
@@ -14,8 +16,11 @@ def about(request):
   return render(request, 'about.html')
 
 def dashboard(request):
+  key = os.environ['ZEN_API_KEY']
+  quote = requests.get(f'https://zenquotes.io/api/today/{key}').json()
+  print(quote)
   categories = Category.objects.all()
-  return render(request, 'categories/index.html', { 'categories': categories })  
+  return render(request, 'categories/index.html', { 'categories': categories, 'html': quote[0]['h'] })  
 
 class ActivityCreate(CreateView):
   model = Activity
