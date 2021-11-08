@@ -5,13 +5,11 @@
 
 <a href="{% url 'activity_create' %}">Add Activity</a>
 <a href="{% url 'activity_list' %}">All Activites</a>
-
+<br><br><br>
 {% for c in categories %}
-<a href="{% url 'activity_list' %}?category={{c.title}}">
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ c.title }}</span>
-        </div>
+<a class="btn-floating pulse {{ c.title }}" href="{% url 'activity_list' %}?category={{c.title}}">
+    <div class="container">
+        {{ c.title }}
     </div>
 </a>
 
