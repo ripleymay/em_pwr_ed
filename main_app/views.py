@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
-from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormMixin
-from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Category, Activity, Log
-from .forms import ActivityForm, LogForm
+from .forms import LogForm
 
 # Create your views here.
 
@@ -20,17 +19,17 @@ def dashboard(request):
 
 class ActivityCreate(CreateView):
   model = Activity
-  form_class = ActivityForm
-  # will be called if the cat data is valid
+  fields = ['title', 'description', 'categories']
+  # will be called if the activity data is valid
   def form_valid(self, form):
-    # form.instance is the in-memory new cat obj
+    # form.instance is the in-memory new activity obj
     form.instance.user = self.request.user
     # Let the CreateView's form_valid method do its job
     return super().form_valid(form)
 
 class ActivityUpdate(UpdateView):
   model = Activity
-  form_class = ActivityForm
+  fields = ['title', 'description', 'categories']
 
 class ActivityDelete(DeleteView):
   model = Activity

@@ -20,7 +20,7 @@ class Activity(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('activity_detail', kwargs={'pk': self.id})
+        return reverse('activity_detail', kwargs={'activity_id': self.id})
 
 class Log(models.Model):
     date_completed = models.DateField('Date Completed')
