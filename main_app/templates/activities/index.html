@@ -3,7 +3,7 @@
 
 <h1>Activity List</h1>
 
-{% for activity in activity_list %}
+{% for activity in activities %}
   <a href="{% url 'activity_detail' activity.id %}">
     <div class="card">
         <div class="card-content">
