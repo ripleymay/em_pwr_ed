@@ -1,32 +1,61 @@
-# Get ready to feel emPWRed.
-
-## Technologies Used
-* Python
-
-
-## Looks like we're about to slay this whole project. #ijs
-
-## GOING BEAST MODE 
+# empwred
+# Version 1.0
+# Author: Ripley Mayfield, Will Broxton, Paolo Ang
+# Final Revision Date:
 
 
-class ActivityDetail(FormMixin, DetailView):
-  model = Activity
-  form_class = LogForm
 
-  def get_success_url(self):
-    return reverse('activity_detail', kwargs={'pk': self.object.pk})
 
-  def post(self, request, *args, **kwargs):
-    if not request.user.is_authenticated:
-      return HttpResponseForbidden()
-    self.object = self.get_object()
-    form = self.get_form()
-    if form.is_valid():
-      return self.form_valid(form)
-    else:
-      return self.form_invalid(form)
+☐ Introduction: 
 
-  def form_valid(self, form):
-        # Here, we would record the user's interest using the message
-        # passed in form.cleaned_data['message']
-        return super().form_valid(form)
+
+
+
+
+
+
+
+☐ Screenshot(s): 
+## Home Page ##
+
+## About Page ##
+
+
+
+
+
+
+☐ Technologies Used: 
+- Python
+- Django
+- HTML
+- CSS
+
+☐ Getting Started: 
+# Link to my Deployed app
+
+# Link to my Trello planning
+<!-- use CRUD mapping guidelines link:
+https://gist.github.com/jim-clark/17908763db7bd3c403e6 -->
+
+☐ Next Steps:
+
+
+
+**** MY SIDE NOTES (TO BE DELETED WHEN FINISHED) ****
+COMMIT/PUSH to git
+git add -A
+git commit -m ‘first commit’
+git push
+
+
+Startup Server
+python3 manage.py runserver  
+
+☐ FUTURE UPDATES:
+
+
+
+☐ ICEBOX ITEMS:
+Next Step(10/29/21): 
+
