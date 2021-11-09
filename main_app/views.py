@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.db.models import Sum
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -18,9 +19,13 @@ def about(request):
 def dashboard(request):
   key = os.environ['ZEN_API_KEY']
   quote = requests.get(f'https://zenquotes.io/api/today/{key}').json()
-  print(quote)
   categories = Category.objects.all()
-  return render(request, 'categories/index.html', { 'categories': categories, 'html': quote[0]['h'] })  
+  activities = Activity.objects.filter(user=request.user)
+  logs = Log.objects.filter(activity__in=activities)
+  categories_list = []
+  for c in categories:
+    categories_list.append(c.title)
+  return render(request, 'categories/index.html', { 'categories': categories, 'categories_list': categories_list, 'activities': activities, 'logs': logs, 'html': quote[0]['h'] })  
 
 class ActivityCreate(CreateView):
   model = Activity
