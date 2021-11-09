@@ -5,6 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Category, Activity, Log
 from .forms import LogForm
+import datetime
 import requests
 import os
 
@@ -19,13 +20,20 @@ def about(request):
 def dashboard(request):
   key = os.environ['ZEN_API_KEY']
   quote = requests.get(f'https://zenquotes.io/api/today/{key}').json()
+
   categories = Category.objects.all()
-  activities = Activity.objects.filter(user=request.user)
-  logs = Log.objects.filter(activity__in=activities)
-  categories_list = []
-  for c in categories:
-    categories_list.append(c.title)
-  return render(request, 'categories/index.html', { 'categories': categories, 'categories_list': categories_list, 'activities': activities, 'logs': logs, 'html': quote[0]['h'] })  
+
+  today = datetime.date.today()
+  week_ago = today - datetime.timedelta(days=6)
+  logs = Log.objects.filter(activity__user=request.user, date_completed__range=(week_ago, today))
+  agg_logs = logs.values('activity__categories').annotate(mins=Sum('duration_in_minutes')).order_by()
+
+  totals = []
+  for ag in agg_logs:
+    title = list(filter(lambda cat: cat.id == ag['activity__categories'], categories))[0].title
+    totals.append({'title': title, 'mins': ag['mins']})
+
+  return render(request, 'categories/index.html', { 'categories': categories, 'totals': totals, 'html': quote[0]['h'] })  
 
 class ActivityCreate(CreateView):
   model = Activity
