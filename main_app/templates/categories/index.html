@@ -12,10 +12,9 @@
 <br><br><br>
 
 <div class="circle-wrapper">
-
 {% for c in categories %}
-<a class="btn-floating btn-large pulse category" href="{% url 'activity_list' %}?category={{c.title}}">
-    <div class ="circle {{ c.title }}">
+<a class ="circle {{ c.title }} btn-floating btn-large pulse category" href="{% url 'activity_list' %}?category={{c.title}}">
+    <div>
         {{ c.title }}
     </div>
 </a>
