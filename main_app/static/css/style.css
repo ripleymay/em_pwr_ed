@@ -1,3 +1,5 @@
+@import "compass/css3";
+
 body {
     display: flex;
     min-height: 100vh;
@@ -28,9 +30,9 @@ body #home-bg {
 }
 
 .btn-floating.category {
-    display: inline-flex;
+    /* display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     min-height: 175px;
     min-width: 175px;
     margin: 35px;
@@ -40,18 +42,224 @@ body #home-bg {
     margin: 0;
 }
 
-.btn-floating.category.Mental {
-    margin-bottom: 100px;
-}
 
-.btn-floating.category.Physical {
-    margin-top: 100px;
-}
 
-.btn-floating.category.Environmental, .btn-floating.category.Social {
-    margin-bottom: 0;
-}
 
-.btn-floating.category.Spiritual, .btn-floating.category.Emotional {
-    margin-top: 0;
-}
+.circle-wrapper {
+    width:501px;
+    height:501px;
+    border-radius:51%;
+    background:Chartreuse;
+    position:relative;
+    margin:100px;
+ }
+ 
+ .circle {
+    display:block;
+    position:absolute;
+    top:51%;
+    left:51%;
+    width:100px;
+    height:100px;
+    margin:-51px;
+    background:red;
+    border-radius:51%;
+    text-align:center;
+    line-height:100px;
+ }
+ 
+ 
+ 
+ .Mental {
+    transform:rotate(46deg) translate(251px) rotate(-46deg);
+ }
+ 
+ .Emotional {
+    transform:rotate(91deg) translate(251px) rotate(-91deg);
+ }
+ 
+ .Environmental {
+    transform:rotate(136deg) translate(251px) rotate(-136deg);
+ }
+ 
+ .Physical {
+    transform:rotate(181deg) translate(251px) rotate(-181deg);
+ }
+ 
+ .Spiritual{
+    transform:rotate(226deg) translate(251px) rotate(-226deg);
+ }
+ 
+ .Social {
+    transform:rotate(271deg) translate(251px) rotate(-271deg);
+ }
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Will's CSS  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ripley's CSS  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Paolo's CSS  */
+
