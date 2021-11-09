@@ -26,19 +26,13 @@
 {% endfor %}
 </div>
 
-<script>
 
+<script>
+    
     const data = {
-        labels: [
-            'Emotional',
-            'Environmental',
-            'Mental',
-            'Physical',
-            'Social',
-            'Spiritual'
-        ],
+        labels: {{ categories_list|safe }},
         datasets: [{
-            label: 'Testing!',
+            label: 'Today',
             data: [65, 59, 90, 81, 56, 55],
             fill: true,
             backgroundColor: 'rgba(255, 99, 132, 0.2)',

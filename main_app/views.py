@@ -19,7 +19,12 @@ def dashboard(request):
   key = os.environ['ZEN_API_KEY']
   quote = requests.get(f'https://zenquotes.io/api/today/{key}').json()
   categories = Category.objects.all()
-  return render(request, 'categories/index.html', { 'categories': categories, 'html': quote[0]['h'] })  
+  activities = Activity.objects.filter(user=request.user)
+  logs = Log.objects.filter(activity__in=activities)
+  categories_list = []
+  for c in categories:
+    categories_list.append(c.title)
+  return render(request, 'categories/index.html', { 'categories': categories, 'categories_list': categories_list, 'activities': activities, 'logs': logs, 'html': quote[0]['h'] })  
 
 class ActivityCreate(CreateView):
   model = Activity
