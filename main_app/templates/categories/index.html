@@ -28,12 +28,26 @@
 
 
 <script>
+    const CATEGORIES = [
+        {% for c in categories %}
+            '{{ c.title }}',
+        {% endfor %}
+    ]
+
+    const totals = {{ totals|safe }}
+    CATEGORIES.forEach(c => {
+        if (!totals.some(tot => tot.title === c)) totals.push({'title': c, 'mins': 0}) 
+    })
+    totals.sort((a, b) => a.title > b.title ? 1 : -1)
     
+    const labels = totals.map(tot => tot.title)
+    const mins = totals.map(tot => tot.mins)
+
     const data = {
-        labels: {{ categories_list|safe }},
+        labels: labels,
         datasets: [{
-            label: 'Today',
-            data: [65, 59, 90, 81, 56, 55],
+            label: 'Past week',
+            data: mins,
             fill: true,
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgb(255, 99, 132)',
