@@ -9,7 +9,12 @@
 
 <a href="{% url 'activity_create' %}">Add Activity</a>
 <a href="{% url 'activity_list' %}">All Activites</a>
-<br><br><br>
+
+<br>
+<div id="radar" style="width: 75%;">
+    <canvas id="radar-chart"></canvas>
+</div>
+<br>
 
 <div class="circle-wrapper">
 {% for c in categories %}
@@ -21,5 +26,47 @@
 {% endfor %}
 </div>
 
+<script>
+
+    const data = {
+        labels: [
+            'Emotional',
+            'Environmental',
+            'Mental',
+            'Physical',
+            'Social',
+            'Spiritual'
+        ],
+        datasets: [{
+            label: 'Testing!',
+            data: [65, 59, 90, 81, 56, 55],
+            fill: true,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgb(255, 99, 132)',
+            pointBackgroundColor: 'rgb(255, 99, 132)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 99, 132)'
+        }]
+    };
+
+    const config = {
+        type: 'radar',
+        data: data,
+        options: {
+            responsive: true,
+            elements: {
+                line: {
+                    borderWidth: 3
+                }
+            }
+        },
+    };
+
+    window.onload = function() {
+      var ctx = document.getElementById('radar-chart').getContext('2d');
+      window.myRadar = new Chart(ctx, config);
+    };
+</script>
 
 {% endblock %}

@@ -18,7 +18,6 @@ def about(request):
 def dashboard(request):
   key = os.environ['ZEN_API_KEY']
   quote = requests.get(f'https://zenquotes.io/api/today/{key}').json()
-  print(quote)
   categories = Category.objects.all()
   return render(request, 'categories/index.html', { 'categories': categories, 'html': quote[0]['h'] })  
 
