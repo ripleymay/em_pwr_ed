@@ -10,22 +10,22 @@
 <a href="{% url 'activity_create' %}">Add Activity</a>
 <a href="{% url 'activity_list' %}">All Activites</a>
 
-<br>
-<div id="radar" style="width: 75%;">
-    <canvas id="radar-chart"></canvas>
-</div>
-<br>
-
-<div class="circle-wrapper">
-{% for c in categories %}
-<a class ="circle {{ c.title }} btn-floating btn-large pulse category" href="{% url 'activity_list' %}?category={{c.title}}">
-    <div>
-        {{ c.title }}
+<div id ="dashboard">
+    <div id="radar" style="width: 75%;">
+        <canvas id="radar-chart"></canvas>
     </div>
-</a>
-{% endfor %}
-</div>
 
+
+    <div class="circle-wrapper">
+    {% for c in categories %}
+    <a class ="circle {{ c.title }} btn-floating btn-large pulse category" href="{% url 'activity_list' %}?category={{c.title}}">
+        <div>
+            {{ c.title }}
+        </div>
+    </a>
+    {% endfor %}
+    </div>
+</div>
 
 <script>
     const CATEGORIES = [
