@@ -15,15 +15,6 @@ nav, footer.page-footer {
     background-color: black;
 }
 
-body #home-bg {
-    background-image: url('https://i.imgur.com/pVAOcAa.mp4');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    min-width: 100vh;
-    margin: 0;
-}
 
 #daily-quote {
     font-size: 32px;
@@ -33,18 +24,15 @@ body #home-bg {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 175px;
-    min-width: 175px;
-    margin: 35px;
+    min-height: 75px;
+    min-width: 75px;
+    /* margin: 35px; */
 }
 
 .btn-floating.category > div {
     margin: 0;
 }
 
-.container {
-    height: 100%;
-}
 
 
 /* .circle-wrapper {
@@ -58,8 +46,8 @@ body #home-bg {
  .circle {
     display:block;
     position:absolute;
-    /* top:51%; */
-    /* left:51%; */
+    top:51%;
+    left:51%;
     width:70px;
     height:70px;
     margin:-51px;
@@ -119,10 +107,6 @@ body #home-bg {
     left: 0;
 }
 
-/* .circlewrapper {
-    z-index: 10;
-    background-color: blue;; 
-} */
 
 
 

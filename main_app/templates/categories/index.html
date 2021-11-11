@@ -7,39 +7,42 @@
     {{ html|safe }}
 </section>
 
-<a href="{% url 'activity_create' %}">Add Activity</a>
-<a href="{% url 'activity_list' %}">All Activites</a>
+<section id="activity-nav">
+    <a href="{% url 'activity_create' %}">Add Activity</a>
+    <a href="{% url 'activity_list' %}">All Activites</a>
+</section>
 
-<div id ="dashboard">
+<div id="dashboard">
     <div id="radar" style="width: 75%;">
         <canvas id="radar-chart"></canvas>
     </div>
 
 
-    <div class="circle-wrapper">
-    {% for c in categories %}
-    <a class ="circle {{ c.title }} btn-floating btn-large pulse category" href="{% url 'activity_list' %}?category={{c.title}}">
-        <div>
-            {{ c.title }}
-        </div>
-    </a>
-    {% endfor %}
+    <div>
+        {% for c in categories %}
+        <a class="circle {{ c.title }} btn-floating btn-large pulse category"
+            href="{% url 'activity_list' %}?category={{c.title}}">
+            <div>
+                {{ c.title }}
+            </div>
+        </a>
+        {% endfor %}
     </div>
-</div>
+
 
 <script>
     const CATEGORIES = [
         {% for c in categories %}
-            '{{ c.title }}',
+    '{{ c.title }}',
         {% endfor %}
     ]
 
-    const totals = {{ totals|safe }}
+    const totals = {{ totals| safe }}
     CATEGORIES.forEach(c => {
-        if (!totals.some(tot => tot.title === c)) totals.push({'title': c, 'mins': 0}) 
+        if (!totals.some(tot => tot.title === c)) totals.push({ 'title': c, 'mins': 0 })
     })
     totals.sort((a, b) => a.title > b.title ? 1 : -1)
-    
+
     const labels = totals.map(tot => tot.title)
     const mins = totals.map(tot => tot.mins)
 
@@ -71,9 +74,9 @@
         },
     };
 
-    window.onload = function() {
-      var ctx = document.getElementById('radar-chart').getContext('2d');
-      window.myRadar = new Chart(ctx, config);
+    window.onload = function () {
+        var ctx = document.getElementById('radar-chart').getContext('2d');
+        window.myRadar = new Chart(ctx, config);
     };
 </script>
 
