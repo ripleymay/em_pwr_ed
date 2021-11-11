@@ -1,15 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1> Your Dashboard </h1>
+<h1> Meet your PWR. </h1>
 
 <section id="daily-quote">
     {{ html|safe }}
-</section>
-
-<section id="activity-nav">
-    <a href="{% url 'activity_create' %}">Add Activity</a>
-    <a href="{% url 'activity_list' %}">All Activites</a>
 </section>
 
 <div id="dashboard">

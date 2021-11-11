@@ -1,4 +1,8 @@
 
+* {
+    font-family: 'Cormorant Garamond', serif;
+}
+
 body {
     display: flex;
     min-height: 100vh;
@@ -12,7 +16,7 @@ main {
 }
 
 nav, footer.page-footer {
-    background-color: black;
+    background-color: rgb(41, 41, 41);
 }
 
 

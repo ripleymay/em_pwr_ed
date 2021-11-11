@@ -14,7 +14,7 @@
     background-size: cover;
 }
 
-img{
+img.headshot {
     grid-area: footer;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@ img{
     height: 18%
 }
 
-li{
+li.pao {
     text-decoration-color: black;
     text-decoration-line: underline;
     font-size: 30px;

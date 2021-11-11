@@ -13,8 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style-p.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style-w.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style-r.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style-r.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Cormorant+Garamond:wght@500&family=Rajdhani:wght@600&family=Rampart+One&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
@@ -33,6 +33,7 @@
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
           <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+          <li><a href="{% url 'activity_list' %}">All Activites</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
