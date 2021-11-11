@@ -1,13 +1,31 @@
+* {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+body {
+    color: rgb(41, 41, 41);
+    background-color: rgb(250, 250, 243);
+}
+
+nav, footer.page-footer {
+    background-color: rgb(41, 41, 41);
+}
+
+.btn {
+    font-family: 'Cormorant Garamond', serif;
+}
+
 #activity-cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .activity-card {
     margin: 10px;
 }
 
-.card-content, .act-descrip-card {
+.card-content {
     background-color: rgb(212, 206, 193);
 }
 
@@ -34,39 +52,47 @@ i.dark {
 .cat-tag {
     display: inline;
     padding: 5px;
+    border-radius: 2px;
 }
 
 .Emotional-tag {
-    border: 2px #E4584E solid;
+    background-color: #FF7F7F;
 }
 .Environmental-tag {
-    border: 2px #F8961E solid;
+    background-color: #FFD580;
 }
 .Mental-tag {
-    border: 2px #F9C74F solid;
+    background-color: #F1EB9C;
 }
 .Physical-tag {
-    border: 2px #90BE6D solid;
+    background-color: #a8e4a0;
 }
 .Social-tag {
-    border: 2px #A5CCDF solid;
+    background-color: #add8e6;
 }
 .Spiritual-tag {
-    border: 2px #AA91CA solid;
+    background-color: #CBC3E3;
 }
 
-#activity-header, #activity-deets {
+#activity-header, #activities-header, #activity-deets {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-#activity-header a {
+#activity-header, #activities-header {
+    justify-content: space-between;
+}
+
+#activity-deets {
+    justify-content: space-evenly;
+}
+
+#activity-header a, #activities-header a, #activity-del a {
     background-color: rgb(41, 41, 41);
     margin: 10px 0 0 10px;
 }
 
-#activity-header a:hover {
+#activity-header a:hover, #activities-header a:hover, #activity-del a:hover {
     transform: scale(1.25);
 }
 
@@ -80,4 +106,22 @@ i.dark {
 
 #logger {
     margin: 20px;
+}
+
+.btn.submit {
+    margin-top: 15px;
+    background-color: rgb(41, 41, 41);
+}
+
+.btn.submit:hover {
+    color: rgb(41, 41, 41);
+    background-color: rgb(212, 206, 193);
+}
+
+.btn.confirm-del {
+    margin-left: 15px;
+}
+
+.all-tag {
+    background-color: rgb(212, 206, 193);
 }

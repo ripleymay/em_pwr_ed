@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Delete activity?</h1>
+  <h1>Are you sure you want to delete <u>{{ object.title }}</u>?</h1>
+  <h4>You will lose all associated data, including your time logs.</h4>
 
-  <h4>Are you sure you want to delete <span class="teal-text">{{ object.title }}</span>?</h4>
-
-  <form action="" method="POST">
+  <form id="activity-del" action="" method="POST">
     {% csrf_token %}
-    <input type="submit" value="Yes - Delete!" class="btn">
-    <a href="{% url 'activity_detail' object.id %}">Cancel</a>
+    <a class="btn-floating btn-large waves-effect waves-light" href="{% url 'activity_detail' object.id %}"><i class="material-icons">undo</i></a>
+    <input type="submit" value="Delete" class="btn submit confirm-del">
   </form>
 {% endblock %}

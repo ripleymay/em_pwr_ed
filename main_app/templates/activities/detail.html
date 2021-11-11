@@ -3,26 +3,31 @@
 
 <section id="activity-header">
   <h1>{{ activity.title }}</h1>
-
+  
   <div>
     <a class="btn-floating btn-large waves-effect waves-light" href="{% url 'activity_update' activity.id %}"><i class="material-icons">edit</i></a>
     <a class="btn-floating btn-large waves-effect waves-light" href="{% url 'activity_delete' activity.id %}"><i class="material-icons">delete_sweep</i></a>
   </div>
 </section>
 
-<section id="activity-deets">
+<div class="divider"></div>
 
-  <div class="card">
+<section id="activity-deets">
+  <div>
     <div class="card-panel act-descrip-card">
-      <p>{{activity.description}}</p>
+      <h5>{{activity.description}}</h5>
     </div>
-    <div class="card-action">
-      {% for c in activity.categories.all %}
-      <h5 class="cat-tag {{c.title}}-tag">{{ c.title }}</h5>
-      {% endfor %}
+    <div class="card">
+      <div class="card-content">
+        <span>This helps in the following spheres...</span>
+      </div>
+      <div class="card-action">
+        {% for c in activity.categories.all %}
+        <h5 class="cat-tag {{c.title}}-tag">{{ c.title }}</h5>
+        {% endfor %}
+      </div>
     </div>
   </div>
-
   <div id="logger" class="card">
     <div class="card-content">
       <span class="card-title">Log time</span>
@@ -31,24 +36,62 @@
         {{ log_form.as_table }}
     </div>
     <div class="card-action">
-      <input type="submit" class="btn" value="Add time">
+      <input type="submit" class="btn submit" value="Add time">
       </form>
     </div>
   </div>
 </section>
 
-<section id="all-logs">
-  {% for log in activity.log_set.all %}
-    <div class="card log-card">
-      <div class="card-panel">
-        {{ log.date_completed }} | {{ log.duration_in_minutes }} mins
-        <a class="btn-floating btn-small halfway-fab waves-effect waves-light log-del" href="{% url 'log_delete' activity.id log.id %}">
-          <i class="material-icons dark">delete</i></a>
-      </div>
-    </div>
-  {% endfor %}
-</section>
+<div class="divider"></div>
+<h4 class="center-align">Time spent...</h4>
 
+<section id="all-logs">
+
+  <div class="row log-cols">
+
+    <div class="col s4">
+      <h6>Last week</h6>
+      {% for log in last_week_logs %}
+      <div class="card log-card">
+        <div class="card-panel">
+          {{ log.date_completed }} | {{ log.duration_in_minutes }} mins
+          <a class="btn-floating btn-small halfway-fab waves-effect waves-light log-del"
+            href="{% url 'log_delete' activity.id log.id %}">
+            <i class="material-icons dark">delete</i></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="col s4">
+      <h6>Last 30 days</h6>
+      {% for log in last_month_logs %}
+      <div class="card log-card">
+        <div class="card-panel">
+          {{ log.date_completed }} | {{ log.duration_in_minutes }} mins
+          <a class="btn-floating btn-small halfway-fab waves-effect waves-light log-del"
+            href="{% url 'log_delete' activity.id log.id %}">
+            <i class="material-icons dark">delete</i></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="col s4">
+      <h6>All time prior</h6>
+      {% for log in all_prior_logs %}
+      <div class="card log-card">
+        <div class="card-panel">
+          {{ log.date_completed }} | {{ log.duration_in_minutes }} mins
+          <a class="btn-floating btn-small halfway-fab waves-effect waves-light log-del"
+            href="{% url 'log_delete' activity.id log.id %}">
+            <i class="material-icons dark">delete</i></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
 <script>
 
