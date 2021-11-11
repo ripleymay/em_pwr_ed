@@ -1,37 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% if category %}
-  <h1>{{ category }} activities</h1>
-{% else %}
-  <h1>All activities</h1>
-{% endif %}
 
-<section id="cat-select">
-
+<section id="activities-header">
+  <h1>Your activities</h1> 
+  <a class="btn-floating btn-large waves-effect waves-light" href="{% url 'activity_create' %}"><i class="material-icons">library_add</i></a>
 </section>
 
+<div class="divider"></div>
+
+<section id="cat-select">
+  <ul class="pagination center-align">
+    <li class="{% if category == None %}all-tag {% else %}waves-effect {% endif %}"><a href="{% url 'activity_list' %}">All</a></li>
+    {% for c in categories %}
+    <li class="{% if c.title == category %}{{c.title}}-tag {% else %}waves-effect {% endif %}">
+      <a href="{% url 'activity_list' %}?category={{c.title}}">{{c.title}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<div class="divider"></div>
+
 <section id="activity-cards">
-
-{% for activity in activities %}
-  <div class="card activity-card">
-    <div class="card-image">
-      <img src="https://i.imgur.com/Nn49ret.png">
-      <span class="card-title">{{ activity.title }}</span>
-      <a class="btn-floating halfway-fab waves-effect waves-light lookat" href="{% url 'activity_detail' activity.id %}">
-        <i class="material-icons dark">search</i></a>
+  {% for activity in activities %}
+    <div class="card activity-card">
+      <div class="card-image">
+        <img src="https://i.imgur.com/Nn49ret.png">
+        <span class="card-title">{{ activity.title }}</span>
+        <a class="btn-floating halfway-fab waves-effect waves-light lookat" href="{% url 'activity_detail' activity.id %}">
+          <i class="material-icons dark">search</i></a>
+      </div>
+      <div class="card-content">
+          {% for c in activity.categories.all %}
+            <p class="cat-tag {{c.title}}-tag">{{ c.title }}</p>
+          {% endfor %}
+          <br>
+          <br>
+        <p>{{ activity.description }}</p>
+      </div>
     </div>
-    <div class="card-content">
-        {% for c in activity.categories.all %}
-          <p class="cat-tag {{c.title}}-tag">{{ c.title }}</p>
-        {% endfor %}
-        <br>
-        <br>
-      <p>{{ activity.description }}</p>
-    </div>
-  </div>
-{% endfor %}
-
+  {% empty %}
+    <h5>Nothing here yet.</h5>
+  {% endfor %}
 </section>
 
 {% endblock %}

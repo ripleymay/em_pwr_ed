@@ -2,9 +2,9 @@
 {% block content %}
 
 {% if object %}
-  <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+  <h1><i class="medium material-icons">edit</i>&nbsp;{{object.title}}</h1>
 {% else %}
-  <h1>Add Activity</h1>
+  <h1>Add new activity</h1>
 {% endif %}
 
 <form action="" method="POST">
@@ -12,7 +12,11 @@
   <table>
     {{ form.as_table }}
   </table>
-  <input type="submit" value="Submit!" class="btn">
+  {% if object %}
+    <input type="submit" value="Update" class="btn submit">
+  {% else %}
+    <input type="submit" value="Create" class="btn submit">
+  {% endif %}
 </form>
 
 <script>
