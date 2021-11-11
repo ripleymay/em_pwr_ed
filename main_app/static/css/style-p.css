@@ -1,7 +1,37 @@
-#about-bg {
+#container {
+    display: grid;
+    grid-template-columns: 150px;
+    margin-left: -150px;
+    grid-template-areas: 
+    "main",
+    "nav",
+    "footer ";
+}
 
-    /* background: url(https://i.imgur.com/pHtTq00.jpg) center no-repeat;
-    background: url(https://i.imgur.com/PFkbiJL.jpg) center no-repeat;
-    background: url(https://i.imgur.com/q0Ka2wN.png) center no-repeat; */
-    
+#container > main{
+    display: main;
+    background: url(https://i.imgur.com/du3mREA.jpg) center no-repeat;
+    background-size: cover;
+}
+
+img{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 18%
+}
+
+li{
+    text-decoration-color: black;
+    text-decoration-line: underline;
+    font-size: 30px;
+}
+
+#blue{
+    color: rgb(0, 132, 255);
+}
+
+#white{
+    color: whitesmoke;
 }

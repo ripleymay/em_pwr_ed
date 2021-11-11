@@ -20,17 +20,17 @@ Let us introduce the six pillars of balance and wellness.  In order to perform a
 
 ☐ Screenshot(s): 
 ## Home Page ##
-
+![empwred](https://i.imgur.com/RAMkAf3.png)
 
 
 
 ## About Page ##
-
+![empwred](https://i.imgur.com/N9wBT3P.png)
 
 
 
 ## Dashboard Page ##
-
+<!-- ![empwred](https://i.imgur.com/N9wBT3P.png) -->
 
 
 
