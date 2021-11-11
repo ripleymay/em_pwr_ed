@@ -1,0 +1,24 @@
+#bgvid {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+.myButton{
+    background:url("https://i.imgur.com/VKAlzcP.png") no-repeat;
+    cursor:pointer;
+    border:none;
+    width:100px;
+    height:100px;
+}
+
+myButton:active {
+     background:url("https://i.imgur.com/VKAlzcP.png") no-repeat;
+}
+
+.fadeButton {
+    display: none;
+  }

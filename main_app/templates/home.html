@@ -2,8 +2,19 @@
 {% block content %}
 
 <section id='home-bg'>
-    <!-- <h1>emPWRed</h1> -->
-
+    <video playsinline autoplay muted poster="https://i.imgur.com/EyHYbJu.jpg" id="bgvid">
+        <source src="https://i.imgur.com/pVAOcAa.mp4" type="video/webm">
+      </video>
+      
+      <header id= "home-vp" class="viewport-header">
+        <input type="image" src="https://i.imgur.com/VKAlzcP.png" name="emPWRed" class="btTxt submit myButton fadeButton" id="home-logo" />
+    </header>
 </section>
+
+<script>
+    $(window).on('load', function() {
+        $('.fadeButton').delay(9000).fadeIn()
+    })
+</script>
 
 {% endblock %}
