@@ -8,21 +8,21 @@
 </section>
 
 <div id="dashboard">
-    <div id="radar" style="width: 75%;">
+    <div id="radar">
         <canvas id="radar-chart"></canvas>
     </div>
 
-
-    <div>
+    <!-- <div id="circle-wrapper"> -->
         {% for c in categories %}
-        <a class="circle {{ c.title }} btn-floating btn-large pulse category"
+        <a class="circle {{ c.title }} {{ c.title }}-tag btn-floating btn-large pulse category"
             href="{% url 'activity_list' %}?category={{c.title}}">
             <div>
                 {{ c.title }}
             </div>
         </a>
         {% endfor %}
-    </div>
+    <!-- </div> -->
+</div>
 
 
 <script>
@@ -47,9 +47,9 @@
             label: 'Past week',
             data: mins,
             fill: true,
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgb(255, 99, 132)',
-            pointBackgroundColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(212, 206, 193, 0.2)',
+            borderColor: 'rgb(212, 206, 193)',
+            pointBackgroundColor: 'rgb(41, 41, 41)',
             pointBorderColor: '#fff',
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderColor: 'rgb(255, 99, 132)'

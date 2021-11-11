@@ -19,258 +19,55 @@ nav, footer.page-footer {
     background-color: rgb(41, 41, 41);
 }
 
-
 #daily-quote {
     font-size: 32px;
+    margin-bottom: 10vmin;
 }
 
-.btn-floating.category {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 75px;
-    min-width: 75px;
-    /* margin: 35px; */
+.Physical {
+    transform:rotate(90deg) translate(250px) rotate(-90deg);
 }
 
-.btn-floating.category > div {
-    margin: 0;
+.Social {
+    transform:rotate(150deg) translate(250px) rotate(-150deg);
+}
+
+.Mental {
+    transform:rotate(30deg) translate(250px) rotate(-30deg);
+}
+
+.Spiritual {
+    transform:rotate(210deg) translate(250px) rotate(-210deg);
+}
+
+.Emotional{
+    transform:rotate(270deg) translate(250px) rotate(-270deg);
+}
+
+.Environmental {
+    transform:rotate(330deg) translate(250px) rotate(-330deg);
 }
 
 
-
-/* .circle-wrapper {
-    width:100%;
-    height:501px;
-    border-radius:51%;
-    position:relative;
-    margin:auto;
- } */
- 
- .circle {
-    display:block;
-    position:absolute;
-    top:51%;
-    left:51%;
-    width:70px;
-    height:70px;
-    margin:-51px;
-    background:red;
-    border-radius:51%;
-    text-align:center;
-    line-height:100px;
- }
- 
- 
- 
- .Mental {
-    transform:rotate(0deg) translate(251px) rotate(0deg);
- }
- 
- .Emotional {
-    transform:rotate(60deg) translate(251px) rotate(-60deg);
- }
- 
- .Environmental {
-    transform:rotate(120deg) translate(251px) rotate(-120deg);
- }
- 
- .Physical {
-    transform:rotate(180deg) translate(251px) rotate(-180deg);
- }
- 
- .Spiritual{
-    transform:rotate(240deg) translate(251px) rotate(-240deg);
- }
- 
- .Social {
-    transform:rotate(300deg) translate(251px) rotate(-300deg);
- }
- 
- 
 #dashboard {
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
-    height: auto;
+    height: 75vh;
+}
+
+#circle-wrapper {
+    /* padding: 200px; */
+    position: absolute;
+}
+
+.circle {
+    position:absolute;
 }
 
 #radar {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     position: absolute;
-    top: 0;
-    left: 0;
 }
-
-.circlewrapper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Will's CSS  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Ripley's CSS  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Paolo's CSS  */
-
