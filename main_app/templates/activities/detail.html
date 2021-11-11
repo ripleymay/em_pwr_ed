@@ -1,40 +1,53 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>{{ activity.title }}</h1>
+<section id="activity-header">
+  <h1>{{ activity.title }}</h1>
 
-<a href="{% url 'activity_update' activity.id %}">Edit</a>
-<a href="{% url 'activity_delete' activity.id %}">Delete</a>
+  <div>
+    <a class="btn-floating btn-large waves-effect waves-light" href="{% url 'activity_update' activity.id %}"><i class="material-icons">edit</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light" href="{% url 'activity_delete' activity.id %}"><i class="material-icons">delete_sweep</i></a>
+  </div>
+</section>
 
-<div class="col s6">
-    <h3>Category tags</h3>
+<section id="activity-deets">
+
+  <div class="card">
+    <div class="card-panel act-descrip-card">
+      <p>{{activity.description}}</p>
+    </div>
+    <div class="card-action">
       {% for c in activity.categories.all %}
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">
-              {{ c.title }}
-            </span>
-          </div>
-        </div>
+      <h5 class="cat-tag {{c.title}}-tag">{{ c.title }}</h5>
       {% endfor %}
-      <h3>Logs</h3>
+    </div>
+  </div>
 
-        <form action="{% url 'log_create' activity.id %}" method="POST">
-          {% csrf_token %}
-          {{ log_form.as_table }}
-          <input type="submit" class="btn" value="Add time">
-        </form>
+  <div id="logger" class="card">
+    <div class="card-content">
+      <span class="card-title">Log time</span>
+      <form action="{% url 'log_create' activity.id %}" method="POST">
+        {% csrf_token %}
+        {{ log_form.as_table }}
+    </div>
+    <div class="card-action">
+      <input type="submit" class="btn" value="Add time">
+      </form>
+    </div>
+  </div>
+</section>
 
-      {% for log in activity.log_set.all %}
-        <div class="card">
-          <div class="card-panel">
-            {{ log.duration_in_minutes }} minutes on {{ log.date_completed }}
-            <a href="{% url 'log_delete' activity.id log.id %}">Delete</a>
-          </div>
-        </div>
-      {% endfor %}
-
-</div>
+<section id="all-logs">
+  {% for log in activity.log_set.all %}
+    <div class="card log-card">
+      <div class="card-panel">
+        {{ log.date_completed }} | {{ log.duration_in_minutes }} mins
+        <a class="btn-floating btn-small halfway-fab waves-effect waves-light log-del" href="{% url 'log_delete' activity.id log.id %}">
+          <i class="material-icons dark">delete</i></a>
+      </div>
+    </div>
+  {% endfor %}
+</section>
 
 
 <script>

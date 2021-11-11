@@ -1,0 +1,83 @@
+#activity-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.activity-card {
+    margin: 10px;
+}
+
+.card-content, .act-descrip-card {
+    background-color: rgb(212, 206, 193);
+}
+
+.btn-floating.lookat {
+    background-color: rgb(250, 250, 243);
+}
+
+.btn-floating.log-del {
+    background-color: rgb(250, 250, 243);
+}
+
+.btn-floating.log-del:hover {
+    background-color: #E4584E;
+}
+
+.btn-floating.lookat:hover {
+    transform: scale(1.25);
+}
+
+i.dark {
+    color: rgb(41, 41, 41);
+}
+
+.cat-tag {
+    display: inline;
+    padding: 5px;
+}
+
+.Emotional-tag {
+    border: 2px #E4584E solid;
+}
+.Environmental-tag {
+    border: 2px #F8961E solid;
+}
+.Mental-tag {
+    border: 2px #F9C74F solid;
+}
+.Physical-tag {
+    border: 2px #90BE6D solid;
+}
+.Social-tag {
+    border: 2px #A5CCDF solid;
+}
+.Spiritual-tag {
+    border: 2px #AA91CA solid;
+}
+
+#activity-header, #activity-deets {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#activity-header a {
+    background-color: rgb(41, 41, 41);
+    margin: 10px 0 0 10px;
+}
+
+#activity-header a:hover {
+    transform: scale(1.25);
+}
+
+.act-descrip-card {
+    padding: 10px 20px;
+}
+
+.log-card {
+    width: fit-content;
+}
+
+#logger {
+    margin: 20px;
+}
