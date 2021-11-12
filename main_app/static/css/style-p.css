@@ -1,24 +1,4 @@
-#container {
-    display: grid;
-    grid-template-columns: 150px;
-    margin-left: -150px;
-    grid-template-areas: 
-    "header",
-    "main ",
-    "footer ";
-}
-
-#container > header{
-    display: table-header-group;
-    background: url(https://i.imgur.com/du3mREA.jpg) center no-repeat;
-    background-size: cover;
-}
-
-#PAmain {
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+.headshot {
     width: 180px;
     height: 180px
 }
@@ -28,26 +8,3 @@
 }
 
 
-#ourcontacts{
-    text-align: center;
-    text-decoration: underline;
-}
-#values {
-    text-align: center;
-}
-
-li.pao #values {
-    grid-area: main;
-    text-align: center;
-    text-decoration-color: black;
-    font-size: 20px;
-}
-
-
-#blue{
-    color: rgb(0, 132, 255);
-}
-
-#white{
-    color: whitesmoke;
-}

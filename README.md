@@ -15,6 +15,13 @@ Let us introduce the six pillars of balance and wellness.  In order to perform a
 ## About Page ##
 ![empwred](https://i.imgur.com/TyJeSqw.png)
 
+## Dashboard Page ##
+![empwred](https://i.imgur.com/i95Ogbb.png)
+
+
+## Task functionality ##
+![empwred](https://i.imgur.com/g2zp8V0.png)
+
 ☐ Technologies Used: 
 - Python
 - Django
@@ -32,7 +39,7 @@ https://trello.com/b/7uq21fGi/project-power
 https://gist.github.com/jim-clark/17908763db7bd3c403e6 -->
 
 ☐ Next Steps:
--
+
 
 ☐ FUTURE UPDATES:
 Next Step(11/11/21): 
