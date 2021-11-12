@@ -3,30 +3,46 @@
     grid-template-columns: 150px;
     margin-left: -150px;
     grid-template-areas: 
-    "main",
-    "nav",
+    "header",
+    "main ",
     "footer ";
 }
 
-#container > main{
-    display: main;
+#container > header{
+    display: table-header-group;
     background: url(https://i.imgur.com/du3mREA.jpg) center no-repeat;
     background-size: cover;
 }
 
-img.headshot {
-    grid-area: footer;
+#PAmain {
+    grid-area: main;
     display: flex;
     flex-direction: column;
-    width: 20%;
-    height: 18%
+    text-align: center;
+    width: 180px;
+    height: 180px
+}
+#OurTeam {
+    text-decoration: black;
+    text-decoration-line: underline;
 }
 
-li.pao {
-    text-decoration-color: black;
-    text-decoration-line: underline;
-    font-size: 30px;
+
+#ourcontacts{
+    text-align: center;
+    text-decoration: underline;
 }
+#values {
+    text-align: center;
+}
+
+li.pao #values {
+    grid-area: main;
+    text-align: center;
+    text-decoration-color: black;
+    font-size: 20px;
+}
+
 
 #blue{
     color: rgb(0, 132, 255);
