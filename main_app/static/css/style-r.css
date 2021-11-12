@@ -79,12 +79,12 @@ i.dark {
     justify-content: space-evenly;
 }
 
-#activity-header a, #activities-header a, #activity-del a {
+#activity-header a, #activities-header a, #activity-del a, #daily-quote a {
     background-color: rgb(41, 41, 41);
     margin: 10px 0 0 10px;
 }
 
-#activity-header a:hover, #activities-header a:hover, #activity-del a:hover {
+#activity-header a:hover, #activities-header a:hover, #activity-del a:hover, #daily-quote a:hover {
     transform: scale(1.25);
 }
 

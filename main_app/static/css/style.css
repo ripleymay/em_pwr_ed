@@ -19,6 +19,10 @@ nav, footer.page-footer {
     background-color: rgb(41, 41, 41);
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
 footer.page-footer {
     margin-top: 5%;
     padding-bottom: 20px;
@@ -29,31 +33,38 @@ footer.page-footer div {
 }
 
 #daily-quote {
+    display: flex;
+    align-items: center;
     font-size: 32px;
 }
 
+#quote-html {
+    width: 90%;
+    margin-left: 10px;
+}
+
 .Physical {
-    transform:rotate(90deg) translate(275%) rotate(-90deg);
+    transform:rotate(90deg) translate(290%) rotate(-90deg);
 }
 
 .Social {
-    transform:rotate(150deg) translate(275%) rotate(-150deg);
+    transform:rotate(150deg) translate(290%) rotate(-150deg);
 }
 
 .Mental {
-    transform:rotate(30deg) translate(275%) rotate(-30deg);
+    transform:rotate(30deg) translate(290%) rotate(-30deg);
 }
 
 .Spiritual {
-    transform:rotate(210deg) translate(275%) rotate(-210deg);
+    transform:rotate(210deg) translate(290%) rotate(-210deg);
 }
 
 .Emotional{
-    transform:rotate(270deg) translate(275%) rotate(-270deg);
+    transform:rotate(270deg) translate(290%) rotate(-270deg);
 }
 
 .Environmental {
-    transform:rotate(330deg) translate(275%) rotate(-330deg);
+    transform:rotate(330deg) translate(290%) rotate(-330deg);
 }
 
 #dashboard {

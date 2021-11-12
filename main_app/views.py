@@ -22,23 +22,37 @@ def about(request):
 @login_required
 def dashboard(request):
   key = os.environ['ZEN_API_KEY']
-  quote = requests.get(f'https://zenquotes.io/api/today/{key}').json()
+  random = request.GET.get('random')
+  if random:
+    quote = requests.get(f'https://zenquotes.io/api/random/{key}').json()
+  else:
+    quote = requests.get(f'https://zenquotes.io/api/today/{key}').json()
 
   categories = Category.objects.all()
 
   today = datetime.date.today()
   week_ago = today - datetime.timedelta(days=6)
+  month_ago = today - datetime.timedelta(days=29)
+
   logs = Log.objects.filter(activity__user=request.user, date_completed__range=(week_ago, today))
+  month_logs = Log.objects.filter(activity__user=request.user, date_completed__range=(month_ago, today))
   agg_logs = logs.values('activity__categories').annotate(mins=Sum('duration_in_minutes')).order_by()
+  month_agg_logs = month_logs.values('activity__categories').annotate(mins=Sum('duration_in_minutes')).order_by()
 
   totals = []
   for ag in agg_logs:
     title = list(filter(lambda cat: cat.id == ag['activity__categories'], categories))[0].title
     totals.append({'title': title, 'mins': ag['mins']})
 
+  month_totals = []
+  for ag in month_agg_logs:
+    title = list(filter(lambda cat: cat.id == ag['activity__categories'], categories))[0].title
+    month_totals.append({'title': title, 'mins': ag['mins']})
+
   return render(request, 'categories/index.html', { 
     'categories': categories, 
     'totals': totals, 
+    'month_totals': month_totals,
     'html': quote[0]['h'] 
   })  
 
@@ -80,6 +94,7 @@ def activity_detail(request, activity_id):
   today = datetime.date.today()
   week_ago = today - datetime.timedelta(days=6)
   month_ago = today - datetime.timedelta(days=29)
+  
   last_week_logs = Log.objects.filter(activity=activity, date_completed__range=(week_ago, today))
   last_month_logs = Log.objects.filter(activity=activity, date_completed__range=(month_ago, week_ago))
   all_prior_logs = Log.objects.filter(activity=activity, date_completed__lt=(month_ago))
@@ -116,12 +131,10 @@ def signup(request):
     if form.is_valid():
       user = form.save()
       login(request, user)
-      return redirect('home')
+      return redirect('dashboard')
     else:
       error_message = 'Invalid sign up - try again'
   # A bad POST or a GET request, so render signup.html with an empty form
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
-
-  
