@@ -4,7 +4,8 @@
 <h1> Meet your PWR. </h1>
 
 <section id="daily-quote">
-    {{ html|safe }}
+    <a class="btn-floating waves-effect waves-light" href="{% url 'dashboard' %}?random=True"><i class="material-icons">autorenew</i></a>
+    <div id="quote-html">{{ html|safe }}</div>
 </section>
 
 <div id="dashboard">
@@ -30,13 +31,19 @@
     ]
 
     const totals = {{ totals| safe }}
+    const month_totals = {{ month_totals|safe }}
+
     CATEGORIES.forEach(c => {
         if (!totals.some(tot => tot.title === c)) totals.push({ 'title': c, 'mins': 0 })
+        if (!month_totals.some(tot => tot.title === c)) month_totals.push({ 'title': c, 'mins': 0 })
     })
+
     totals.sort((a, b) => a.title > b.title ? 1 : -1)
+    month_totals.sort((a, b) => a.title > b.title ? 1 : -1)
 
     const labels = totals.map(tot => tot.title)
     const mins = totals.map(tot => tot.mins)
+    const m_mins = month_totals.map(tot => tot.mins)
 
     const data = {
         labels: labels,
@@ -44,9 +51,20 @@
             label: 'Past week',
             data: mins,
             fill: true,
+            backgroundColor: 'rgba(41, 41, 41, 0.2)',
+            borderColor: 'rgb(41, 41, 41)',
+            pointBackgroundColor: 'rgb(41, 41, 41)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 99, 132)'
+        },
+        {
+            label: 'Past month',
+            data: m_mins,
+            fill: true,
             backgroundColor: 'rgba(212, 206, 193, 0.2)',
             borderColor: 'rgb(212, 206, 193)',
-            pointBackgroundColor: 'rgb(41, 41, 41)',
+            pointBackgroundColor: 'rgb(212, 206, 193)',
             pointBorderColor: '#fff',
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderColor: 'rgb(255, 99, 132)'

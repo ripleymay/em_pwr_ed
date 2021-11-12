@@ -22,12 +22,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 </head>
+
 <body>
   <header class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <ul>
-          <li><a href="{% url 'home' %}" class="left">&nbsp;&nbsp;Home</a></li>
+        <ul class="left">
+          <li><a href="{% url 'home' %}">Home</a></li>
         </ul>
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>
@@ -47,8 +48,8 @@
     {% block content %}
     {% endblock %}
   </main>
-
 </body>
+
 <footer class="page-footer">
   <div class="right">All Rights Reserved, &copy; PWR &nbsp;</div>
   <div class="left">&nbsp;&nbsp;Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></div>
