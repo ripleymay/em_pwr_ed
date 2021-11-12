@@ -146,7 +146,7 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.7s;
 }
 .cont.s--el-active .el__bg:after {
   transition: opacity 0.5s 1.4s;
@@ -326,7 +326,7 @@
 }
 .el:nth-child(1) .el__bg:before {
   transition-delay: 0s;
-  background-image: url("https://i.imgur.com/VmHyvNU.png");
+  background-image: url("https://i.imgur.com/2SrFH67.png");
 }
 .el:nth-child(2) {
   transform: translate3d(105.2083333333%, 0, 0);
@@ -345,7 +345,7 @@
 }
 .el:nth-child(2) .el__bg:before {
   transition-delay: 0.1s;
-  background-image: url("https://i.imgur.com/cECB1nz.png");
+  background-image: url("https://i.imgur.com/frorlPy.png");
 }
 .el:nth-child(3) {
   transform: translate3d(210.4166666667%, 0, 0);
@@ -364,7 +364,7 @@
 }
 .el:nth-child(3) .el__bg:before {
   transition-delay: 0.2s;
-  background-image: url("https://i.imgur.com/rSW7nbn.png");
+  background-image: url("https://i.imgur.com/dgwC7Ay.png");
 }
 .el:nth-child(4) {
   transform: translate3d(315.625%, 0, 0);
@@ -383,7 +383,7 @@
 }
 .el:nth-child(4) .el__bg:before {
   transition-delay: 0.3s;
-  background-image: url("https://i.imgur.com/4Vd0CMr.png");
+  background-image: url("https://i.imgur.com/8as1fnO.png");
 }
 .el:nth-child(5) {
   transform: translate3d(420.8333333333%, 0, 0);
@@ -402,7 +402,7 @@
 }
 .el:nth-child(5) .el__bg:before {
   transition-delay: 0.4s;
-  background-image: url("https://i.imgur.com/vJef1hP.png");
+  background-image: url("https://i.imgur.com/yBm7o5U.png");
 }
 .el:hover .el__bg:after {
   opacity: 0;
