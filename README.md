@@ -13,7 +13,7 @@ Let us introduce the six pillars of balance and wellness.  In order to perform a
 ![empwred](https://i.imgur.com/RAMkAf3.png)
 
 ## About Page ##
-![empwred](https://i.imgur.com/TyJeSqw.png)
+![empwred](https://i.imgur.com/AuxciVq.png)
 
 ## Dashboard Page ##
 ![empwred](https://i.imgur.com/i95Ogbb.png)
