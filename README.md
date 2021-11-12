@@ -25,12 +25,9 @@ Let us introduce the six pillars of balance and wellness.  In order to perform a
 
 
 ## About Page ##
-![empwred](https://i.imgur.com/N9wBT3P.png)
+![empwred](https://i.imgur.com/TyJeSqw.png)
 
 
-
-## Dashboard Page ##
-<!-- ![empwred](https://i.imgur.com/N9wBT3P.png) -->
 
 
 
@@ -46,7 +43,7 @@ Let us introduce the six pillars of balance and wellness.  In order to perform a
 
 ☐ Getting Started: 
 # Link to our Deployed app
-
+https://empwred.herokuapp.com/
 # Link to our Trello planning
 https://trello.com/b/7uq21fGi/project-power
 <!-- use CRUD mapping guidelines link:
@@ -55,10 +52,7 @@ https://gist.github.com/jim-clark/17908763db7bd3c403e6 -->
 
 
 ☐ Next Steps:
-
-
-
-
+-
 
 
 
@@ -66,10 +60,17 @@ https://gist.github.com/jim-clark/17908763db7bd3c403e6 -->
 Startup Server
 python3 manage.py runserver  
 
+
+
 ☐ FUTURE UPDATES:
+Next Step(11/11/21): 
+- PWR member: Ripley suggests to unify all our current CSS files into one CSS file.
+- PWR member: Will wants to polish more of the CSS and add several other cool features
+- PWR member: Paolo wants to update more of the CSS in the about page while maintaining a 
+  minimalist style.
 
 
 
-☐ ICEBOX ITEMS:
-Next Step(10/29/21): 
+
+
 
