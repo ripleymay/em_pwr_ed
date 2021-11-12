@@ -19,35 +19,42 @@ nav, footer.page-footer {
     background-color: rgb(41, 41, 41);
 }
 
+footer.page-footer {
+    margin-top: 5%;
+    padding-bottom: 20px;
+}
+
+footer.page-footer div {
+    font-size: 1rem;
+}
+
 #daily-quote {
     font-size: 32px;
-    margin-bottom: 10vmin;
 }
 
 .Physical {
-    transform:rotate(90deg) translate(250px) rotate(-90deg);
+    transform:rotate(90deg) translate(275%) rotate(-90deg);
 }
 
 .Social {
-    transform:rotate(150deg) translate(250px) rotate(-150deg);
+    transform:rotate(150deg) translate(275%) rotate(-150deg);
 }
 
 .Mental {
-    transform:rotate(30deg) translate(250px) rotate(-30deg);
+    transform:rotate(30deg) translate(275%) rotate(-30deg);
 }
 
 .Spiritual {
-    transform:rotate(210deg) translate(250px) rotate(-210deg);
+    transform:rotate(210deg) translate(275%) rotate(-210deg);
 }
 
 .Emotional{
-    transform:rotate(270deg) translate(250px) rotate(-270deg);
+    transform:rotate(270deg) translate(275%) rotate(-270deg);
 }
 
 .Environmental {
-    transform:rotate(330deg) translate(250px) rotate(-330deg);
+    transform:rotate(330deg) translate(275%) rotate(-330deg);
 }
-
 
 #dashboard {
     display: flex;
@@ -58,16 +65,40 @@ nav, footer.page-footer {
 }
 
 #circle-wrapper {
+    width: 70%;
+    height: 70%;
     /* padding: 200px; */
     position: absolute;
-}
-
-.circle {
-    position:absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2.5s infinite;
 }
 
 #radar {
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 70%;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    color: rgb(41, 41, 41);
+    position: absolute;
+    height: 12vmin;
+    width: 12vmin;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle.Environmental {
+    font-size: 1.2rem;
+}
+
+.circle:hover {
+    background-color: rgb(212, 206, 193);
 }

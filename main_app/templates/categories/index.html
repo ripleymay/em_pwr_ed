@@ -8,20 +8,17 @@
 </section>
 
 <div id="dashboard">
-    <div id="radar">
-        <canvas id="radar-chart"></canvas>
-    </div>
-
-    <!-- <div id="circle-wrapper"> -->
+    <div id="circle-wrapper">
         {% for c in categories %}
-        <a class="circle {{ c.title }} {{ c.title }}-tag btn-floating btn-large pulse category"
-            href="{% url 'activity_list' %}?category={{c.title}}">
-            <div>
-                {{ c.title }}
-            </div>
-        </a>
-        {% endfor %}
-    <!-- </div> -->
+        <a class="circle {{ c.title }} {{ c.title }}-tag btn-floating"
+        href="{% url 'activity_list' %}?category={{c.title}}">
+            {{ c.title }}</a>
+    {% endfor %}
+    </div>
+    <div id="radar">
+        <canvas id="radar-chart">
+        </canvas>
+    </div>
 </div>
 
 
