@@ -12,11 +12,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 #home-logo {
-  position: center;
-  
+  margin-top: 40%;
+  /* margin: auto auto; */
 }
 
 #activity-nav {
